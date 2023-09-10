@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:#fff">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <span class="day">Wednesday</span> <span>Rohan</span>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        // #parent
+        let parent =document.querySelector('.parent')
+        console.log(parent)
+        // children
+        console.log(parent.children)
+        console.log(parent.children[1].innerHTML)
+        console.log(parent.innerHTML)
+
+        // children iteration loop
+        for (let i = 0; i < parent.children.length; i++) {
+            console.log(parent.children[i].innerHTML)
+            
+        }
+        // children styling
+        parent.children[1].style.color ="orange"
+        parent.children[2].style.color ="green"
+        parent.children[2].style.padding ="25px"
+
+        // firstElementChild
+        console.log(parent.firstElementChild);
+
+        // Another class Day 
+        const dayOne =document.querySelector('.day')
+        // get parent class from children
+        console.log(dayOne.parentElement)
+        // get next sibiling becuase DOM process is expensive
+        console.log(dayOne.nextElementSibling)
+
+        console.log("NODES: ",parent.childNodes)
+
+    </script>
+</body>
+
+</html>
