@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="background-color: #212121;color: #fff;">
+    <ul class="language">
+        <li>
+            javascript
+        </li>
+    </ul>
+</body>
+<script>
+
+    // TASK : 1 : ADD ----------------------------------------------
+    // Method :1 
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML =`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    // addLanguage("python")
+    // addLanguage("typescript")
+
+    // METHOD: 2:  (Optimised) 
+    function addOptiLanguage(langName){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('Golang')
+    
+    // TASK :2 : EDIT -------------------------------------------------
+    const secondElement =document.querySelector('li:nth-child(2)')
+    console.log(secondElement)
+    // secondElement.innerHTML ="mojo"
+    const newLi =document.createElement('li')
+    newLi.textContent ="Mojo"
+    secondElement.replaceWith(newLi)
+
+    // Method :2 : Edit 
+    const firstElement =document.querySelector("li:first-child")
+    firstElement.outerHTML ='<li>Type</li>'
+
+    // Task 3 :REMOVE 
+    lastElement =document.querySelector('li:last-child')
+    lastElement.remove()
+
+
+</script>
+</html>
