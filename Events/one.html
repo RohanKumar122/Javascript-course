@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;color: white;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/9546590/pexels-photo-9546590.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/17904851/pexels-photo-17904851/free-photo-of-art-pattern-texture-abstract.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="galaxy"></li>
+            <li><img width="200px"  id="river" src="https://images.pexels.com/photos/18295331/pexels-photo-18295331/free-photo-of-no-title.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="scenere"></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/9883024/pexels-photo-9883024.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="beach" ></li>
+            <li><a href="https://google.com" id="google" type="blank" >Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // Approach 1: (Not more feasible)
+
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owlll")
+    // }
+
+    // Approach 2: 
+    //attachEvent
+    // jQuery -on
+    //type, timestap , defaultPrevented
+    //target, toElement ,srcElement,currentTarget
+    // clientx ,clientY ,screen X , screeenY
+    //altkey,ctrl,shiftkey, keycode
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     alert("owl is click")
+    //     console.log(e)
+    // },false)
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName==='IMG'){
+            console.log(e.target.id)
+        let removeIt =e.target.parentNode
+        // removeIt.remove()
+        removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+
+
+
+    
+</script>
+</html>
