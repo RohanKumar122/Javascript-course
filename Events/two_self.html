@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 150px;
+            height: 50px;
+            background-color: transparent; /* Set background color to transparent */
+            border: 2px solid #3498db; /* Add a border (blue color) */
+            box-sizing: border-box; 
+            margin: 30px;
+            font-weight: bold;
+            text-align: center;
+            color:red;
+            padding:15px;
+            margin: 50px;
+            
+    }
+
+    #start{
+        background-color: #3498db;
+        color: black;
+
+    }    
+
+    </style>
+</head>
+<body>
+    <h1>Rohan's Stopwatch!!</h1>
+    <div class="box"></div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    const startbutton=document.querySelector("#start")
+    const stopbutton=document.querySelector("#stop")
+
+    const textData = "Hello Rohan"
+    const boxItem=document.querySelector('.box')
+
+    
+    // a=document.querySelector("#insert").outerHTML=5
+    // console.log(a)
+
+    document.querySelector('#start').addEventListener('click',function(){
+        const startprocess=setInterval(function(){
+        console.log(textData,Date.now())
+        // boxItem.innerHTML =new Date().toLocaleString()
+        boxItem.innerHTML =new Date().toLocaleTimeString()
+        // boxItem.innerHTML =new Date().getSeconds()
+    
+        document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(startprocess)
+    })
+    },1000)
+    })
+
+    
+   
+
+    
+
+    
+
+    
+</script>
+</html>
